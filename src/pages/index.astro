@@ -1,0 +1,52 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="max-w-4xl mx-auto px-4 py-8">
+			<h1 class="text-4xl font-bold mb-6 text-gray-900">Bienvenido a DMH Sales</h1>
+			
+			<p class="text-xl text-gray-700 mb-8 leading-relaxed">
+				Tu destino de confianza para encontrar los mejores productos en Amazon. En <strong>DMH Sales</strong>, 
+				analizamos el mercado, comparamos características y seleccionamos solo aquello que realmente vale la pena, 
+				ayudándote a comprar de forma inteligente y segura.
+			</p>
+
+			<section class="bg-orange-50 border-l-4 border-orange-500 p-6 mb-10 rounded-r-lg">
+				<h2 class="text-2xl font-semibold text-orange-800 mb-2">Nuestra Misión</h2>
+				<p class="text-gray-800">
+					Simplificamos tu proceso de decisión. Ya busques tecnología, hogar o cuidado personal, nuestras 
+					guías están diseñadas para ofrecerte la mejor relación calidad-precio disponible actualmente.
+				</p>
+			</section>
+
+			<h2 class="text-3xl font-bold mb-6 text-gray-900">¿Por dónde empezar?</h2>
+			<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+				<li class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+					<span class="block text-blue-600 font-bold mb-1">Guías de Compra</span>
+					Explora nuestras selecciones de los mejores productos del año.
+				</li>
+				<li class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+					<span class="block text-blue-600 font-bold mb-1">Análisis Detallados</span>
+					Reviews profundas de los gadgets y electrodomésticos más vendidos.
+				</li>
+			</ul>
+
+			<div class="mt-12 text-center">
+				<p class="text-gray-500 italic">
+					¿Buscas algo específico? Revisa nuestra sección de <a href="/blog" class="text-orange-600 font-semibold underline">Análisis y Comparativas</a>.
+				</p>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
