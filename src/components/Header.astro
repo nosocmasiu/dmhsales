@@ -31,14 +31,15 @@ import { SITE_TITLE } from '../consts';
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	
-	/* Estilos para que el logo se vea perfecto */
+	/* Estilos para que el logo se vea perfecto Y GRANDE */
 	.logo-link {
 		display: flex;
 		align-items: center;
 		text-decoration: none;
+		padding: 0.5em 0; /* Un poco de aire arriba y abajo */
 	}
 	.site-logo {
-		height: 45px; /* Altura ideal para la cabecera */
+		height: 80px; /* <--- PASAMOS DE 45px A 80px (Casi el doble) */
 		width: auto;
 		display: block;
 	}
@@ -75,9 +76,9 @@ import { SITE_TITLE } from '../consts';
 			gap: 0.5rem;
 			font-size: 0.9em;
 		}
-		/* Hacemos el logo un poquito más pequeño en móviles para que no estorbe */
+		/* Hacemos el logo más grande también en móviles */
 		.site-logo {
-			height: 35px;
+			height: 55px; /* <--- PASAMOS DE 35px A 55px EN MÓVIL */
 		}
 	}
 </style>
