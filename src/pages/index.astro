@@ -35,17 +35,8 @@ const productos = [
 		descripcion: "Teclado mecánico inalámbrico formato 75% con switches intercambiables y retroiluminación RGB.",
 		precio: "95€",
 		enlaceAmazon: "https://amazon.es"
-	},
-	{
-		nombre: "Monitor LG UltraGear",
-		categoria: "MONITORES",
-		imagen: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&q=80&w=800",
-		valoracionEstrellas: "⭐⭐⭐⭐⭐",
-		valoracionNum: "4.6",
-		descripcion: "Panel Nano IPS de 27 pulgadas, resolución 1440p, 165Hz y 1ms de tiempo de respuesta.",
-		precio: "349€",
-		enlaceAmazon: "https://amazon.es"
 	}
+	// Puedes seguir añadiendo más productos aquí abajo
 ];
 ---
 
@@ -60,16 +51,15 @@ const productos = [
 		<main class="max-w-7xl mx-auto px-4 py-12">
 			
 			<h1 class="text-4xl font-extrabold mb-10 text-gray-900 border-b-4 border-orange-500 pb-2 inline-block">
-				Productos
+				Productos Recomendados
 			</h1>
 			
-			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				{
 					productos.map((producto) => (
-						/* TARJETA BLANCA CON TUS COLORES */
 						<div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col group">
 							
-							<div class="relative h-48 overflow-hidden bg-white p-4 flex items-center justify-center">
+							<div class="relative h-40 overflow-hidden bg-white p-6 flex items-center justify-center">
 								<img 
 									src={producto.imagen} 
 									alt={producto.nombre} 
@@ -80,18 +70,18 @@ const productos = [
 								</span>
 							</div>
 							
-							<div class="p-5 flex flex-col flex-grow">
+							<div class="p-6 flex flex-col flex-grow">
 								
 								<h2 class="text-gray-900 group-hover:text-orange-500 transition-colors font-bold text-lg leading-tight mb-2">
 									{producto.nombre}
 								</h2>
 								
 								<div class="flex items-center gap-2 mb-3">
-									<span class="text-yellow-500 text-xs tracking-widest">{producto.valoracionEstrellas}</span>
+									<span class="text-yellow-500 text-sm tracking-widest">{producto.valoracionEstrellas}</span>
 									<span class="text-gray-600 text-sm font-medium">{producto.valoracionNum}</span>
 								</div>
 
-								<p class="text-gray-600 text-sm mb-4 flex-grow line-clamp-3 leading-relaxed">
+								<p class="text-gray-600 text-sm mb-5 flex-grow line-clamp-3 leading-relaxed">
 									{producto.descripcion}
 								</p>
 								
@@ -105,7 +95,7 @@ const productos = [
 										href={producto.enlaceAmazon} 
 										target="_blank" 
 										rel="nofollow noopener"
-										class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded-lg flex items-center gap-1 transition-colors shadow-sm"
+										class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-2.5 px-4 rounded-lg flex items-center gap-2 transition-colors shadow-sm"
 									>
 										Ver Oferta
 										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
