@@ -5,7 +5,10 @@ import { SITE_TITLE } from '../consts';
 
 <header>
 	<nav>
-		<h2><a href="/" class="site-title">{SITE_TITLE}</a></h2>
+		<a href="/" class="logo-link">
+			<img src="/logo.png" alt="Logo de Sales DMH" class="site-logo" />
+		</a>
+		
 		<div class="internal-links">
 			<HeaderLink href="/">Inicio</HeaderLink>
 			<HeaderLink href="/blog">Análisis</HeaderLink>
@@ -27,18 +30,19 @@ import { SITE_TITLE } from '../consts';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.2em;
-	}
-	.site-title {
-		font-weight: 800;
-		color: #f97316; /* Naranja estilo Amazon */
-	}
-	h2 a,
-	h2 a.active {
+	
+	/* Estilos para que el logo se vea perfecto */
+	.logo-link {
+		display: flex;
+		align-items: center;
 		text-decoration: none;
 	}
+	.site-logo {
+		height: 45px; /* Altura ideal para la cabecera */
+		width: auto;
+		display: block;
+	}
+
 	nav {
 		display: flex;
 		align-items: center;
@@ -70,6 +74,10 @@ import { SITE_TITLE } from '../consts';
 		.internal-links {
 			gap: 0.5rem;
 			font-size: 0.9em;
+		}
+		/* Hacemos el logo un poquito más pequeño en móviles para que no estorbe */
+		.site-logo {
+			height: 35px;
 		}
 	}
 </style>
