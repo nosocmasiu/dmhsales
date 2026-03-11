@@ -11,7 +11,7 @@ const productos = [
 		imagen: "https://m.media-amazon.com/images/I/61ni3Ky9SXL._AC_SL1500_.jpg",
 		valoracion: "⭐⭐⭐⭐⭐",
 		puntos: "4.8",
-		descripcion: "El ratón ergonómico definitivo con scroll electromagnético y sensor de 8000 DPI. Precisión pura.",
+		descripcion: "El ratón ergonómico definitivo con scroll electromagnético y sensor de 8000 DPI.",
 		precio: "109,00€",
 		enlace: "https://amazon.es"
 	},
@@ -21,7 +21,7 @@ const productos = [
 		imagen: "https://m.media-amazon.com/images/I/51SKu69S7pL._AC_SL1500_.jpg",
 		valoracion: "⭐⭐⭐⭐⭐",
 		puntos: "4.9",
-		descripcion: "Líder en cancelación de ruido activa con 30 horas de batería y llamadas ultra nítidas.",
+		descripcion: "Líder en cancelación de ruido activa con 30 horas de batería y llamadas nítidas.",
 		precio: "299,00€",
 		enlace: "https://amazon.es"
 	},
@@ -31,7 +31,7 @@ const productos = [
 		imagen: "https://m.media-amazon.com/images/I/71Yv-p6vFPL._AC_SL1500_.jpg",
 		valoracion: "⭐⭐⭐⭐½",
 		puntos: "4.6",
-		descripcion: "Teclado mecánico inalámbrico 75% con retroiluminación RGB y compatible con Mac/Windows.",
+		descripcion: "Teclado mecánico inalámbrico 75% compatible con Mac y Windows.",
 		precio: "99,00€",
 		enlace: "https://amazon.es"
 	}
@@ -47,42 +47,42 @@ const productos = [
 		<Header />
 		<main class="max-w-7xl mx-auto px-4 py-16">
 			
-			<h1 class="text-3xl font-black text-gray-900 mb-12 uppercase tracking-tight border-l-8 border-orange-500 pl-4">
+			<h1 class="text-3xl font-black text-gray-900 mb-12 uppercase border-l-8 border-orange-500 pl-4">
 				Productos <span class="text-orange-500">Destacados</span>
 			</h1>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				{productos.map((item) => (
-					<div class="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 flex flex-col overflow-hidden">
+					<div class="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-3 flex flex-col overflow-hidden">
 						
-						<div class="relative h-56 bg-white p-8 flex items-center justify-center overflow-hidden">
-							<img src={item.imagen} alt={item.nombre} class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-							<span class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+						<div class="relative h-48 bg-white p-6 flex items-center justify-center">
+							<img src={item.imagen} alt={item.nombre} class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105" />
+							<span class="absolute top-3 left-3 bg-black text-white text-[9px] font-bold px-2 py-1 rounded uppercase">
 								{item.categoria}
 							</span>
 						</div>
 
-						<div class="p-6 flex flex-col flex-grow bg-white">
-							<h2 class="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors duration-300 mb-2">
+						<div class="p-6 flex flex-col flex-grow">
+							<h2 class="text-lg font-bold text-gray-900 group-hover:text-orange-500 mb-2 leading-tight">
 								{item.nombre}
 							</h2>
 							
-							<div class="flex items-center gap-2 mb-4">
-								<span class="text-yellow-400 text-sm">{item.valoracion}</span>
-								<span class="text-gray-400 text-xs font-bold">({item.puntos})</span>
+							<div class="flex items-center gap-2 mb-3">
+								<span class="text-yellow-400 text-xs">{item.valoracion}</span>
+								<span class="text-gray-400 text-[10px] font-bold">({item.puntos})</span>
 							</div>
 
-							<p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+							<p class="text-gray-500 text-xs leading-relaxed mb-6 flex-grow line-clamp-2">
 								{item.descripcion}
 							</p>
 
-							<div class="pt-5 border-t border-gray-100 flex items-center justify-between">
+							<div class="pt-4 border-t border-gray-100 flex items-center justify-between">
 								<div class="flex flex-col">
-									<span class="text-[9px] text-gray-400 font-black uppercase tracking-tighter">Precio Ref.</span>
-									<span class="text-2xl font-black text-gray-900 leading-none">{item.precio}</span>
+									<span class="text-[9px] text-gray-400 font-bold uppercase">Precio</span>
+									<span class="text-xl font-black text-gray-900">{item.precio}</span>
 								</div>
 								
-								<a href={item.enlace} target="_blank" rel="nofollow" class="bg-orange-500 hover:bg-black text-white text-[11px] font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-orange-200 hover:shadow-none uppercase tracking-wider">
+								<a href={item.enlace} target="_blank" class="bg-orange-500 hover:bg-black text-white text-[10px] font-bold py-2 px-4 rounded-lg transition-all duration-300 uppercase shadow-md shadow-orange-100">
 									Ver Oferta
 								</a>
 							</div>
