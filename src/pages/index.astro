@@ -4,37 +4,36 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-// Lista de solo 3 productos para una fila perfecta
 const productos = [
 	{
 		nombre: "Logitech MX Master 3S",
 		categoria: "PERIFÉRICOS",
-		imagen: "https://images.unsplash.com/photo-1615663245857-ac1e653815f7?auto=format&fit=crop&q=80&w=800",
-		valoracionEstrellas: "⭐⭐⭐⭐⭐",
-		valoracionNum: "4.7",
-		descripcion: "Ratón ergonómico con sensor de 8000 DPI, scroll MagSpeed y conexión a hasta 3 dispositivos.",
-		precio: "109€",
-		enlaceAmazon: "https://amazon.es"
+		imagen: "https://m.media-amazon.com/images/I/61ni3Ky9SXL._AC_SL1500_.jpg",
+		valoracion: "⭐⭐⭐⭐⭐",
+		puntos: "4.8",
+		descripcion: "El ratón ergonómico definitivo con scroll electromagnético y sensor de 8000 DPI. Precisión pura.",
+		precio: "109,00€",
+		enlace: "https://amazon.es"
 	},
 	{
 		nombre: "Sony WH-1000XM5",
 		categoria: "AUDIO",
-		imagen: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&q=80&w=800",
-		valoracionEstrellas: "⭐⭐⭐⭐⭐",
-		valoracionNum: "4.8",
-		descripcion: "Auriculares inalámbricos con la mejor cancelación de ruido del mercado y 30 horas de autonomía.",
-		precio: "299€",
-		enlaceAmazon: "https://amazon.es"
+		imagen: "https://m.media-amazon.com/images/I/51SKu69S7pL._AC_SL1500_.jpg",
+		valoracion: "⭐⭐⭐⭐⭐",
+		puntos: "4.9",
+		descripcion: "Líder en cancelación de ruido activa con 30 horas de batería y llamadas ultra nítidas.",
+		precio: "299,00€",
+		enlace: "https://amazon.es"
 	},
 	{
-		nombre: "Teclado Keychron K2",
-		categoria: "GAMING",
-		imagen: "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&q=80&w=800",
-		valoracionEstrellas: "⭐⭐⭐⭐½",
-		valoracionNum: "4.5",
-		descripcion: "Teclado mecánico inalámbrico formato 75% con switches intercambiables y retroiluminación RGB.",
-		precio: "95€",
-		enlaceAmazon: "https://amazon.es"
+		nombre: "Keychron K2 V2",
+		categoria: "TECLADOS",
+		imagen: "https://m.media-amazon.com/images/I/71Yv-p6vFPL._AC_SL1500_.jpg",
+		valoracion: "⭐⭐⭐⭐½",
+		puntos: "4.6",
+		descripcion: "Teclado mecánico inalámbrico 75% con retroiluminación RGB y compatible con Mac/Windows.",
+		precio: "99,00€",
+		enlace: "https://amazon.es"
 	}
 ];
 ---
@@ -44,67 +43,53 @@ const productos = [
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-gray-50">
+	<body class="bg-[#f8f9fa]">
 		<Header />
-		
-		<main class="max-w-7xl mx-auto px-4 py-12">
+		<main class="max-w-7xl mx-auto px-4 py-16">
 			
-			<h1 class="text-3xl font-extrabold mb-10 text-gray-900 border-b-4 border-orange-500 pb-2 inline-block">
-				Ofertas Destacadas
+			<h1 class="text-3xl font-black text-gray-900 mb-12 uppercase tracking-tight border-l-8 border-orange-500 pl-4">
+				Productos <span class="text-orange-500">Destacados</span>
 			</h1>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				{
-					productos.map((producto) => (
-						/* La "Cajita" con efecto de elevación al pasar el ratón */
-						<div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col group cursor-pointer">
-							
-							<div class="relative h-44 overflow-hidden bg-white p-6 flex items-center justify-center">
-								<img 
-									src={producto.imagen} 
-									alt={producto.nombre} 
-									class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
-								/>
-								<span class="absolute bottom-3 left-3 bg-gray-900 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-									{producto.categoria}
-								</span>
-							</div>
-							
-							<div class="p-6 flex flex-col flex-grow">
-								<h2 class="text-gray-900 group-hover:text-orange-500 transition-colors font-bold text-lg leading-tight mb-2">
-									{producto.nombre}
-								</h2>
-								
-								<div class="flex items-center gap-2 mb-3">
-									<span class="text-yellow-500 text-sm">{producto.valoracionEstrellas}</span>
-									<span class="text-gray-500 text-sm">({producto.valoracionNum})</span>
-								</div>
 
-								<p class="text-gray-600 text-sm mb-6 flex-grow line-clamp-2">
-									{producto.descripcion}
-								</p>
-								
-								<div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
-									<div class="flex flex-col">
-										<span class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Precio</span>
-										<span class="text-gray-900 text-2xl font-black leading-none">{producto.precio}</span>
-									</div>
-									
-									<a 
-										href={producto.enlaceAmazon} 
-										target="_blank" 
-										class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2.5 px-4 rounded-lg flex items-center gap-2 transition-all shadow-md active:scale-95"
-									>
-										VER OFERTA
-										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-									</a>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+				{productos.map((item) => (
+					<div class="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 flex flex-col overflow-hidden">
+						
+						<div class="relative h-56 bg-white p-8 flex items-center justify-center overflow-hidden">
+							<img src={item.imagen} alt={item.nombre} class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110" />
+							<span class="absolute top-4 left-4 bg-black text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+								{item.categoria}
+							</span>
+						</div>
+
+						<div class="p-6 flex flex-col flex-grow bg-white">
+							<h2 class="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors duration-300 mb-2">
+								{item.nombre}
+							</h2>
+							
+							<div class="flex items-center gap-2 mb-4">
+								<span class="text-yellow-400 text-sm">{item.valoracion}</span>
+								<span class="text-gray-400 text-xs font-bold">({item.puntos})</span>
+							</div>
+
+							<p class="text-gray-500 text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+								{item.descripcion}
+							</p>
+
+							<div class="pt-5 border-t border-gray-100 flex items-center justify-between">
+								<div class="flex flex-col">
+									<span class="text-[9px] text-gray-400 font-black uppercase tracking-tighter">Precio Ref.</span>
+									<span class="text-2xl font-black text-gray-900 leading-none">{item.precio}</span>
 								</div>
+								
+								<a href={item.enlace} target="_blank" rel="nofollow" class="bg-orange-500 hover:bg-black text-white text-[11px] font-bold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-orange-200 hover:shadow-none uppercase tracking-wider">
+									Ver Oferta
+								</a>
 							</div>
 						</div>
-					))
-				}
+					</div>
+				))}
 			</div>
-
 		</main>
 		<Footer />
 	</body>
