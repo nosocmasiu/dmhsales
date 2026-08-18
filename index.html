@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DMH</title>
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="DMH. Estamos construyendo la tienda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9EBE4;
+    --ink:#17231C;
+    --muted:#5C6B60;
+    --mark:#2C3FB5;
+    --rule:#C6CBBF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Space Grotesk",system-ui,sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{width:100%;max-width:34rem}
+  .mark{
+    font-size:clamp(3.5rem,18vw,7rem);
+    font-weight:600;
+    letter-spacing:-0.04em;
+    line-height:0.9;
+  }
+  .mark span{color:var(--mark)}
+  .rule{
+    height:2px;
+    background:var(--rule);
+    margin:2rem 0 1.75rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .rule::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    width:0;
+    background:var(--mark);
+    animation:grow 1.6s cubic-bezier(.2,.7,.2,1) .3s forwards;
+  }
+  @keyframes grow{to{width:38%}}
+  p{
+    font-size:1.0625rem;
+    line-height:1.55;
+    max-width:28rem;
+    color:var(--ink);
+  }
+  .meta{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.8125rem;
+    color:var(--muted);
+    margin-top:2.5rem;
+    letter-spacing:0.01em;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rule::after{animation:none;width:38%}
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="mark">DMH<span>.</span></div>
+    <div class="rule" role="presentation"></div>
+    <p>Estamos construyendo la tienda. Vuelve pronto.</p>
+    <div class="meta">salesdmh.com</div>
+  </main>
+</body>
+</html>
